@@ -6,30 +6,38 @@ public class FlipCoinSimulator {
     public static void main(String[] args) {
         Random rd = new Random();
         int wage_per_hour = 20;
-        int full_day_hour = 8;
-        int part_time_hour = 3;
-        int wage = 0;
-        int month = 20;
-        int month_wage = 0;
-        for (int i = 1; i <= month; i++) {
+        //int part_time_hour = 3;
+        //  int wage = 0;
+        int wage_per_day = 160;
+        int month_days = 0;
+        int hour = 0;
+        int total_wage = 0;
+        while (month_days < 20 && hour < 100) {
             int attendance = rd.nextInt(2);
             if (attendance == 1) {
                 int time = 0 + rd.nextInt(2);
                 if (time == 1) {
                     //System.out.println(" Employee is Present Full Day...");
-                    wage = full_day_hour * wage_per_hour * attendance;
-                    month_wage += wage;
+                    month_days++;
                 } else if (time == 0) {
                     //System.out.println(" Employee worked Part Time...");
-                    wage = part_time_hour * wage_per_hour * attendance;
-                    month_wage += wage;
+                    hour += rd.nextInt(8);
                 }
-
-            } else {
-               // System.out.println(" Employee is Absent...");
-                wage = full_day_hour * wage_per_hour * attendance;
             }
         }
-        System.out.println(" Employee Monthly Wages = " + month_wage + "₹");
+        System.out.print("===========================");
+        System.out.println("Total Days = " + month_days);
+        System.out.println("Total Hour = "+hour);
+        System.out.print("===========================");
+
+        if (month_days == 20) {
+            total_wage = month_days * wage_per_day;
+        } else if (hour <= 100) {
+            total_wage = hour * wage_per_hour;
+
+        }
+        System.out.println("Total Wage = " + total_wage + "₹");
+
+
     }
 }
