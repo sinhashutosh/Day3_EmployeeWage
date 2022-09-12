@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Random;
 
-public class FlipCoinSimulator {
+public class EmployeeWage {
     public static void main(String[] args) {
         Random rd = new Random();
         int attendance = rd.nextInt(2);
