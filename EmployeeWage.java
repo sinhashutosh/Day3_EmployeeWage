@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Random;
 
-public class FlipCoinSimulator {
+public class  {
     public static void main(String[] args) {
         Random rd = new Random();
         int attendance = rd.nextInt(2);
@@ -12,7 +12,7 @@ public class FlipCoinSimulator {
         int wage = 0;
         System.out.println(attendance);
         if (attendance == 1) {
-            int time =  0 + rd.nextInt(2);
+            int time =  rd.nextInt(2);
             System.out.println(time);
             if (time == 1) {
                 System.out.println(" Employee is Present Full Day...");
